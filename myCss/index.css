@@ -1,0 +1,11 @@
+html, body {
+    height: 100%;
+}
+.index {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 500px;
+    margin: -200px 0px 0px -200px;
+}
