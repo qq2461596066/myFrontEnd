@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- jquery 一定要比bootstrap先引用 -->
+    <script type="text/javascript" src="jQuary/jquery-3.4.1.js"></script>
     <link rel="stylesheet" href="myCss/index.css">
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
@@ -11,14 +13,57 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css" >
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-    <script type="text/javascript" src="jQuary/jquery-3.4.1.js"></script>
+    
     <title>首页</title>
 </head>
 <script>
+    $(function(){
+        $('#loading').modal('show');
+        //请求参数
+        var data = {id:'1',request:'2'};
+        //
+        $.ajax({
+            //请求方式
+            type : "POST",
+            //请求的媒体类型
+            contentType: "application/json;charset=UTF-8",
+            //请求地址
+            url : "http://127.0.0.1:8080/sys/log",
+            //数据，json字符串
+            data : JSON.stringify(data),
+            //请求成功
+            success : function(result) {
+                console.log(result);
+                if(result.code === '0'){
+                    console.log('success');
+                    $('#loading').modal('hide');
+                }
+            },
+            //请求失败，包含具体的错误信息
+            error : function(e){
+                console.log(e);
+            }
+        });
+    
+
+    })
+
     
 </script>
-<body>
-    这是首页，已经引入jQuery
+<body >
+    这是首页，已经引入jQuery<br>
     本项目已经上传gitHub
+    <a class="btn btn-info btn-lg" onclick=whenClick() role="button">Watch It!</a>
+    <!-- loading -->
+    <div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop='static'>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                  请稍候
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
