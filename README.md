@@ -1,3 +1,3 @@
 # myFrontEnd
-this is my frist object  
+this is my first object  
 front end  
