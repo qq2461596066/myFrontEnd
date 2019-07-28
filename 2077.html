@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="myCss/index.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css" >
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script type="text/javascript" src="jQuary/jquery-3.4.1.js"></script>
+	<script type="text/javascript" src="myJs/raphael.js"></script>
+    <script type="text/javascript" src="myJs/jquery.classyled.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="myCss/djs/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="myCss/djs/default.css">
+    <title>欢迎</title>
+</head>
+<script>
+    $(function(){var a={id:"1",request:"2"};$.ajax({type:"POST",contentType:"application/json;charset=UTF-8",url:"http://www.yeziwnl.cn:8080/sys/log",data:JSON.stringify(a),success:function(b){console.log(b)},error:function(b){console.log(b)}})});
+</script>
+
+<body ondragstart="return false" style="background:#ffff01" >
+    <div class="index" style=" margin-top:-300px;margin-left:-200px;">
+            <div><img src="https://yzobj-1258650145.cos.ap-shanghai.myqcloud.com/myFimg/cp20772.jpg" style="width:455px;height: 256px;"></div>
+            <div class="clearfix">
+                <div class="led1" style="margin-left:-170px"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.led1').ClassyLED({
+                type: 'countdown',
+                format: 'ddd:hh:mm:ss',
+                hourFormat: 12,
+                color: '#000000',
+                backgroundColor: '#ffff01',
+                rounded: 0,
+                fontType: 2,
+                size: 10,
+               
+            });
+        });
+    </script>
+</body>
+</html>
