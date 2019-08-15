@@ -23,9 +23,10 @@
     $(function(){var a={id:"1",request:"2"};$.ajax({type:"POST",contentType:"application/json;charset=UTF-8",url:"https://www.yeziwnl.cn:8080/sys/log",data:JSON.stringify(a),success:function(b){console.log(b)},error:function(b){console.log(b)}})});
 </script>
 
-<body ondragstart="return false" style="background:#ffff01" >
+<body class="bd" ondragstart="return false" style="background:#ffff01" >
+	<a class="gd">点我关灯</a>
     <div class="index" style=" margin-top:-300px;margin-left:-200px;">
-            <div><img src="https://yzobj-1258650145.cos.ap-shanghai.myqcloud.com/myFimg/cp20772.jpg" style="width:455px;height: 256px;"></div>
+            <div ><img class="img" src="https://yzobj-1258650145.cos.ap-shanghai.myqcloud.com/myFimg/cp20772.jpg" style="width:455px;height: 256px;"></div>
             <div class="clearfix">
                 <div class="led1" style="margin-left:-170px"></div>
             </div>
@@ -36,19 +37,40 @@
 
 
     <script type="text/javascript">
+		var backgroundColor = '#ffff01';
+		var color = '#000000';
         $(document).ready(function() {
             $('.led1').ClassyLED({
                 type: 'countdown',
                 format: 'ddd:hh:mm:ss',
                 hourFormat: 12,
-                color: '#000000',
-                backgroundColor: '#ffff01',
+                color: color,
+                backgroundColor: backgroundColor,
                 rounded: 0,
                 fontType: 2,
                 size: 10,
                
             });
         });
+		var bdColor = $('.bd').css("background-color");
+		$('.gd').click(function(){
+			$('.bd').css("background-color","#000000");
+			$(".gd").empty();
+			$(".img").empty();
+			$(".led1").empty();
+			$(document).ready(function() {
+				$('.led1').ClassyLED({
+					type: 'countdown',
+					format: 'ddd:hh:mm:ss',
+					hourFormat: 12,
+					color: '#ffff01',
+					backgroundColor: '#000000',
+					rounded: 0,
+					fontType: 2,
+					size: 10, 
+				});
+			});
+		})
     </script>
 </body>
 </html>
