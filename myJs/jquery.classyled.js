@@ -161,7 +161,7 @@
                 this._tick(num);
             };
             this.updateLed1 = function(d) {
-                var dateStart = new Date("2020-04-16 00:00:00");
+                var dateStart = new Date("2020-09-17 00:00:00");
                 var time_rem = parseInt((dateStart.getTime() - d.getTime()) / 1000) + 1;
                 var m_d = parseInt(time_rem / 86400);
                 var m_h = parseInt((time_rem - m_d * 86400) / 3600);
